@@ -2,7 +2,7 @@
   "name": "discord.js-extra-resources",
   "version": "1.0.0",
   "description": "An alternative and follow-up project to https://github.com/discordjs/guide",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
