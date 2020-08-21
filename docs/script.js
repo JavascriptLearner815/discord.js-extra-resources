@@ -1,10 +1,5 @@
-var testBtn = {
-    element: document.getElementById('test'),
-    click: () => {
-        console.log('You clicked the button.');
-    }
-}
+var testBtn = document.getElementById('test');
 
-testBtn.element.addEventListener('click', () => {
-    testBtn.click;
+testBtn.addEventListener('click', () => {
+    console.log('You clicked the button.');
 });
