@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord.js Extra Resources - Getting your Bot Alive</title>
+</head>
+<body>
+    <article>
+        <section>
+            <h1>Getting your Bot Alive</h1>
+            <p>
+                Before you can start coding, you need to create
+                your bot app <a href="https://discord.com/developers/applications" rel="noopener noreferrer" target="_blank">here</a>
+                by clicking "New Application". You can then give your application a name, 
+                description, and an icon. 
+            </p>
+            <p>
+                To create the bot user you will need to use,
+                click on the "Bot" section to the left. Then, all you
+                need to do is click the button to create a new bot user.
+                From here, you can change the bot's username, tweak its 
+                settings, and give it a snazzy avatar.
+                For now, make sure "Public Bot" is off, because you only
+                want yourself to be able to invite it while you
+                develop it.
+            </p>
+            <p>
+                Now it's time to add it to your own server. 
+                Be sure to make a server designated to testing
+                this bot so you can test it privately, then invite your bot.
+                To get your bot's invite link, go <a href="https://discordapi.com/permissions.html">here</a> and paste your
+                client ID into the client ID field from your application's 
+                "Application" section. Copy the link at the bottom of the page
+                and paste and search it into your browser. Then, choose
+                the server you made for the bot, accept the permissions you choose
+                from the permissions website you just used, and complete the CAPTCHA.
+                Finally, just click "Authorize".
+            </p>
+            <p>
+                Click the "Copy" button under "Token" in the "Bot" section. 
+                Don't worry if you accidentally close the bot application manager,
+                you can always go back to the link mentioned above to go back.
+
+                <strong>
+                    Your token is how your bot will log in to Discord.
+                    If someone else gets hold of it, they can do anything
+                    you can to affect the bot's behavior. If you making
+                    a GitHub repository for this, please make a 
+                    .gitignore file for security.
+                    If it does get leaked, go to your bot app's "Bot" 
+                    section in the manager and click "Regenerate" and
+                    confirm <em>immediately</em>. 
+                </strong>
+            </p>
+            <p>
+                It's time to code! Go back to your terminal and run
+                `code-insiders .`, or whatever command your text editor uses.
+                Create a file named `index.js` and another named `config.json`. 
+                Copy & paste this code into `config.json`:
+                <code>
+                    {
+                        "prefix": "!",
+                        "token": "your-token"
+                    }
+                </code>
+                You can replace the prefix value of "!" to whatever you want.
+                The prefix will be used at the beginning of all of your bot's 
+                commands. Replace the "your-token" value with your token, copy it
+                from your app's "Bot" section. 
+                <strong>
+                    Remember <em>not</em> to commit
+                    `config.json`, as it contains your token. Commiting your
+                    `index.js` file is fine as it doesn't expose your token 
+                    in your repo code.
+                </strong>
+                In your `index.js` file, copy & paste the following code:
+                <code>
+                    const { token } = require("./config.json")
+
+                    const { Client } = require("discord.js")
+
+                    const client = new Client()
+
+                    client.once("ready", () => {
+                        console.log(`Logged in as ${client.user.tag}!`)
+                    })
+
+                    client.login(token)
+                </code>
+                Save both of these files with CTRL + S, then go 
+                back to your terminal and run `node index.js`. If you
+                see your bot in the "online" members list, and 
+                "Logged in as " followed by your bot's username and tag, you're
+                ready to move on!
+            </p>
+        </section>
+    </article>
+</body>
+</html>
