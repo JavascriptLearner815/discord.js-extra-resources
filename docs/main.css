@@ -1,3 +1,145 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 body {
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  background: chocolate;
+  color: darkgray;
+}
+aside {
+  padding: 0;
+  margin: 1px;
+}
+nav {
+  display: inline;
+  margin: 0;
+  padding: 5px 0 5px 30px;
+}
+nav a {
+  margin-right: 20px;
+}
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+blockquote p {
+  padding: 15px;
+  background: #EEE;
+  border-radius: 5px;
+  color: gray;
+}
+blockquote p::before {
+  content: "\201C";
+}
+blockquote p::after {
+  content: "\201D";
+}
+a {
+  color: darkslateblue;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:active {
+  color: darkorchid;
+}
+textarea {
+  box-shadow: 3px 3px 4px black;
+}
+textarea[readonly]:hover {
+  cursor: pointer;
+}
+textarea:focus {
+  background: orangered;
+  outline: none;
+}
+textarea:invalid {
+  border: 5px dashed red;
+}
+textarea:valid {
+  border: 5px solid lime;
+}
+figure {
+  margin: 0;
+  padding: 0;
+}
+figure blockquote + figcaption::before {
+  content: "\2014";
+}
+figure blockquote + figcaption.group::after {
+  color: red;
+}
+figure blockquote + figcaption.group-1::after {
+  content: "*";
+}
+pre.group::before {
+  color: red;
+}
+pre.group::before::after {
+  content: "\2014";
+}
+pre.group-1::before {
+  content: "*";
+}
+details {
+  width: 620px;
+  box-shadow: 3px 3px 4px black;
+}
+details > summary {
+  padding: 2px 6px;
+  width: inherit;
+  background: #DDD;
+  border: none;
+  cursor: pointer;
+  list-style: none;
+  outline: none;
+  font-size: 1.15em;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+details > summary::after {
+  background: #DA291C;
+  border-color: #DA291C;
+  border-radius: 15px;
+  content: "+";
+  color: #FFF;
+  float: left;
+  font-size: 1em;
+  font-weight: bold;
+  margin: -2px 10px 0 0;
+  padding: 1px 0 3px 0;
+  text-align: center;
+  width: 30px;
+}
+details > div {
+  border-radius: 0 0 10px 10px;
+  width: inherit;
+  background: #DDD;
+  padding: 2px 6px;
+  margin: 0;
+  box-shadow: 4px 4px 3px black;
+}
+details[open] > summary::after {
+  content: "-";
+}
+.unselectable {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.all {
+  -moz-user-select: all;
+  -webkit-user-select: all;
+  -ms-user-select: all;
+  -o-user-select: all;
+  user-select: all;
+}
+dfn {
+  text-decoration: underline dotted;
+  font-style: normal;
+  font-weight: bolder;
 }
