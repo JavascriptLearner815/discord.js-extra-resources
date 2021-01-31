@@ -59,12 +59,12 @@
                 `code-insiders .`, or whatever command your text editor uses.
                 Create a file named `index.js` and another named `config.json`. 
                 Copy & paste this code into `config.json`:
-                <code>
+                <code><pre>
                     {
                         "prefix": "!",
                         "token": "your-token"
                     }
-                </code>
+                </pre></code>
                 You can replace the prefix value of "!" to whatever you want.
                 The prefix will be used at the beginning of all of your bot's 
                 commands. Replace the "your-token" value with your token, copy it
@@ -76,7 +76,7 @@
                     in your repo code.
                 </strong>
                 In your `index.js` file, copy & paste the following code:
-                <code>
+                <code><pre>
                     const { token } = require("./config.json")
 
                     const { Client } = require("discord.js")
@@ -88,7 +88,7 @@
                     })
 
                     client.login(token)
-                </code>
+                </code></pre>
                 Save both of these files with CTRL + S, then go 
                 back to your terminal and run `node index.js`. If you
                 see your bot in the "online" members list, and 
